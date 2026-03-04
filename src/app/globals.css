@@ -60,15 +60,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at center, transparent 40%, #050505 85%);
-  z-index: 50;
-}
-
 /* Background Noise overlay applied pseudo element on body or main container */
 .bg-noise::before {
   content: "";

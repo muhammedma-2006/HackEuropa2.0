@@ -45,7 +45,7 @@ function MagneticButton({ children, href }: { children: React.ReactNode, href: s
 
 const BackgroundLighting = () => {
     return (
-        <div className="absolute bottom-[-300px] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-violet-600/15 blur-[250px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-[-300px] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-violet-600/10 blur-[250px] rounded-full pointer-events-none" />
     );
 };
 
