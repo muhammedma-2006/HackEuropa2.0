@@ -57,21 +57,78 @@ export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
                 opacity: animate ? 0 : 1,
             }}
         >
-            {/* Hero-like Background Glow */}
-            <div className="absolute inset-0 -z-10 pointer-events-none">
-                <div className="absolute bottom-[-350px] left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-violet-600/20 blur-[260px] rounded-full" />
-                <div className="absolute bottom-[-300px] left-[20%] w-[800px] h-[600px] bg-fuchsia-500/15 blur-[240px] rounded-full" />
-                <div className="absolute bottom-[-300px] right-[20%] w-[800px] h-[600px] bg-sky-400/15 blur-[240px] rounded-full" />
+            <div className="relative flex items-center justify-center h-screen bg-transparent text-center overflow-hidden w-full">
+
+                {/* === LIGHTING LAYERS === */}
+                <div className="absolute inset-0 pointer-events-none">
+
+                    {/* Left Cyber Blue Light */}
+                    <div className="absolute top-1/3 -left-40 w-[600px] h-[600px] bg-[#485DE4]/30 rounded-full blur-[180px]" />
+
+                    {/* Right Electric Indigo Core Glow */}
+                    <div className="absolute top-1/4 -right-40 w-[700px] h-[700px] bg-[#5B189B]/30 rounded-full blur-[200px]" />
+
+                    {/* Center Neon Magenta Highlight */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#D842B6]/25 rounded-full blur-[200px]" />
+
+                    {/* Soft Lilac Edge Diffusion */}
+                    <div className="absolute inset-0 bg-[#E3A8D2]/5 blur-[120px]" />
+
+                </div>
+
+                {/* Dim Background 2.0 */}
+                <div
+                    className="
+      absolute
+      text-[160px] sm:text-[240px] md:text-[320px]
+      font-extrabold
+      text-white/5
+      select-none
+      pointer-events-none
+    "
+                >
+                    2.0
+                </div>
+
+                {/* Foreground Title */}
+                <div className="relative z-10 flex flex-col items-center">
+
+                    <h1
+                        className="
+        text-6xl sm:text-8xl md:text-9xl
+        font-extrabold
+        uppercase
+        text-white
+        tracking-wide
+        leading-none
+      "
+                    >
+                        HACK
+                    </h1>
+
+                    <h1
+                        className="
+        text-6xl sm:text-8xl md:text-9xl
+        font-extrabold
+        uppercase
+        text-white
+        mt-3
+        tracking-wide
+        leading-none
+      "
+                    >
+                        EUROPA
+                    </h1>
+
+                </div>
+
             </div>
+            {/* End Cover Page Block */}
 
-            <div className="flex flex-col items-center">
-                <h1 className="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tight bg-gradient-to-r from-fuchsia-400 via-violet-500 to-sky-400 bg-clip-text text-transparent">
-                    HackEuropa 2.0
-                </h1>
-
+            <div className="absolute z-50 flex flex-col items-center">
                 <button
                     onClick={handleClick}
-                    className="mt-12 px-12 py-4 sm:px-16 sm:py-5 text-lg sm:text-xl rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-600 to-sky-400 hover:scale-105 transition-all duration-300 touch-manipulation"
+                    className="mt-[60vh] px-12 py-4 sm:px-16 sm:py-5 text-lg sm:text-xl rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-600 to-sky-400 hover:scale-105 transition-all duration-300 touch-manipulation shadow-[0_0_30px_rgba(247,37,133,0.3)] hover:shadow-[0_0_50px_rgba(247,37,133,0.6)] text-white font-bold"
                 >
                     Explore
                 </button>
