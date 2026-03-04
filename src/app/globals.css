@@ -109,3 +109,15 @@ body {
 .text-hero-sub-clamp {
   font-size: clamp(8rem, 25vw, 25rem);
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
