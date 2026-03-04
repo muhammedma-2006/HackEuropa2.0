@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import CursorGlow from "@/components/CursorGlow";
 import Navbar from "@/components/Navbar";
+import PageWrapper from "@/components/PageWrapper";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -40,9 +41,11 @@ export default function RootLayout({
       >
         <div className="relative">
           <div className="fixed inset-0 -z-10 backdrop-blur-[120px] opacity-70 pointer-events-none" />
-          <CursorGlow />
-          <Navbar />
-          {children}
+          <PageWrapper>
+            <CursorGlow />
+            <Navbar />
+            {children}
+          </PageWrapper>
         </div>
       </body>
     </html>
