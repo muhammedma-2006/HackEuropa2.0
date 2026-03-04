@@ -71,8 +71,14 @@ export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
             </div>
 
             {/* Content */}
-            <h1 className="text-4xl md:text-6xl font-black mb-10 tracking-widest text-chrome text-center drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">
-                HACK EUROPA 2.0
+            <h1 className="
+        text-7xl sm:text-8xl md:text-9xl
+        font-extrabold
+        tracking-tight
+        mb-12
+        drop-shadow-[0_0_40px_rgba(168,85,247,0.35)]
+      ">
+                HackEuropa 2.0
             </h1>
 
             <button
