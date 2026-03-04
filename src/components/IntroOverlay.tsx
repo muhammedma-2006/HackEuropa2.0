@@ -57,23 +57,11 @@ export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
                 opacity: animate ? 0 : 1,
             }}
         >
-            <div className="relative flex items-center justify-center h-screen bg-transparent text-center overflow-hidden w-full">
+            <div className="relative flex items-center justify-center h-screen overflow-hidden text-center bg-[#0a0a0a] w-full">
 
-                {/* === LIGHTING LAYERS === */}
+                {/* Soft Ambient Light */}
                 <div className="absolute inset-0 pointer-events-none">
-
-                    {/* Left Cyber Blue Light */}
-                    <div className="absolute top-1/3 -left-40 w-[600px] h-[600px] bg-[#485DE4]/30 rounded-full blur-[180px]" />
-
-                    {/* Right Electric Indigo Core Glow */}
-                    <div className="absolute top-1/4 -right-40 w-[700px] h-[700px] bg-[#5B189B]/30 rounded-full blur-[200px]" />
-
-                    {/* Center Neon Magenta Highlight */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#D842B6]/25 rounded-full blur-[200px]" />
-
-                    {/* Soft Lilac Edge Diffusion */}
-                    <div className="absolute inset-0 bg-[#E3A8D2]/5 blur-[120px]" />
-
+                    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-[200px]" />
                 </div>
 
                 {/* Dim Background 2.0 */}
@@ -90,7 +78,7 @@ export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
                     2.0
                 </div>
 
-                {/* Foreground Title */}
+                {/* Header */}
                 <div className="relative z-10 flex flex-col items-center">
 
                     <h1
@@ -98,9 +86,10 @@ export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
         text-6xl sm:text-8xl md:text-9xl
         font-extrabold
         uppercase
-        text-white
         tracking-wide
         leading-none
+        text-white
+        drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]
       "
                     >
                         HACK
@@ -111,10 +100,11 @@ export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
         text-6xl sm:text-8xl md:text-9xl
         font-extrabold
         uppercase
-        text-white
         mt-3
         tracking-wide
         leading-none
+        text-white
+        drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]
       "
                     >
                         EUROPA
