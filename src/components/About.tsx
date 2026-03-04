@@ -15,13 +15,13 @@ export default function About() {
                     className="text-center mb-16"
                 >
                     <div className="inline-block px-4 py-1 mb-6 rounded-full border border-[#f72585]/30 bg-[#f72585]/10 text-[#f72585] text-sm font-semibold tracking-widest text-center shadow-[0_0_15px_rgba(247,37,133,0.2)]">
-                        HOSTED BY THE IT DEPARTMENT
+                        HOSTED BY THE SAIT
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
                         <span className="text-chrome">THE FUTURE</span> IS NOW
                     </h2>
                     <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
-                        Organized by the Students Association of Information Technology (SAIT) and hosted by the IT Department, Hack Europa 2.0 is an intense 8-hour innovation sprint where cutting-edge technology meets visionary ideas.
+                        Organized and hosted by the Students Association of Information Technology (SAIT), Hack Europa 2.0 is an intense 8-hour innovation sprint where cutting-edge technology meets visionary ideas.
                     </p>
                     <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed mt-4">
                         Taking place at the Software Block on 14 March, this high-energy hackathon brings together developers, designers, and problem-solvers to build impactful solutions under pressure.
