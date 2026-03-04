@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 
 export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
-    const [zoom, setZoom] = useState(false);
+    const [animate, setAnimate] = useState(false);
+    const [transformStyle, setTransformStyle] = useState("");
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
@@ -12,104 +13,69 @@ export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
     }, []);
 
     const handleClick = () => {
-        setZoom(true);
-        setTimeout(() => onEnter(), 1400);
+        const hero = document.getElementById("hero");
+        if (!hero) return;
+
+        const rect = hero.getBoundingClientRect();
+
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const viewportCenterX = window.innerWidth / 2;
+        const viewportCenterY = window.innerHeight / 2;
+
+        const translateX = centerX - viewportCenterX;
+        const translateY = centerY - viewportCenterY;
+
+        // Responsive scale factor
+        const scale =
+            window.innerWidth < 640
+                ? 8    // mobile
+                : window.innerWidth < 1024
+                    ? 10   // tablet
+                    : 14;  // desktop
+
+        setTransformStyle(
+            `translate(${translateX}px, ${translateY}px) scale(${scale})`
+        );
+
+        setAnimate(true);
+
+        setTimeout(() => {
+            onEnter();
+            document.getElementById("hero")?.scrollIntoView({ behavior: "instant" });
+        }, 1400);
     };
 
     return (
         <div
-            className={`
-        fixed inset-0 z-[999]
-        flex flex-col items-center justify-center
-        bg-[#050505] text-white overflow-hidden
-        origin-center transform-gpu
-        transition-transform transition-opacity
-        duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-        ${zoom ? "scale-[20] sm:scale-[25] md:scale-[30] opacity-0" : "scale-100 opacity-100"}
-      `}
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-[#050505] text-white overflow-hidden"
+            style={{
+                transform: animate ? transformStyle : "translate(0px, 0px) scale(1)",
+                transition:
+                    "transform 1.4s cubic-bezier(0.22,1,0.36,1), opacity 1.2s ease",
+                opacity: animate ? 0 : 1,
+            }}
         >
-            {/* ===== Ambient Glow (Same as Hero) ===== */}
+            {/* Hero-like Background Glow */}
             <div className="absolute inset-0 -z-10 pointer-events-none">
-
-                <div className="
-          absolute bottom-[-350px] left-1/2 -translate-x-1/2
-          w-[1200px] h-[700px]
-          bg-violet-600/20 blur-[260px] rounded-full
-        " />
-
-                <div className="
-          absolute bottom-[-300px] left-[20%]
-          w-[800px] h-[600px]
-          bg-fuchsia-500/15 blur-[240px] rounded-full
-        " />
-
-                <div className="
-          absolute bottom-[-300px] right-[20%]
-          w-[800px] h-[600px]
-          bg-sky-400/15 blur-[240px] rounded-full
-        " />
+                <div className="absolute bottom-[-350px] left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-violet-600/20 blur-[260px] rounded-full" />
+                <div className="absolute bottom-[-300px] left-[20%] w-[800px] h-[600px] bg-fuchsia-500/15 blur-[240px] rounded-full" />
+                <div className="absolute bottom-[-300px] right-[20%] w-[800px] h-[600px] bg-sky-400/15 blur-[240px] rounded-full" />
             </div>
 
-            {/* ===== Y2K Chrome Abstract 3D Elements ===== */}
+            <div className="flex flex-col items-center">
+                <h1 className="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tight bg-gradient-to-r from-fuchsia-400 via-violet-500 to-sky-400 bg-clip-text text-transparent">
+                    HackEuropa 2.0
+                </h1>
 
-            <div className="absolute inset-0 -z-10 pointer-events-none">
-
-                {/* Chrome Orb */}
-                <div className="
-          absolute top-[20%] left-[10%]
-          w-40 h-40 sm:w-60 sm:h-60
-          rounded-full
-          bg-gradient-to-br
-          from-white/80 via-gray-300 to-gray-600
-          blur-md opacity-30
-          animate-pulse
-        " />
-
-                {/* Metallic Ring */}
-                <div className="
-          absolute bottom-[15%] right-[10%]
-          w-60 h-60 sm:w-80 sm:h-80
-          rounded-full border-[8px]
-          border-white/20
-          blur-sm opacity-30
-        " />
-
+                <button
+                    onClick={handleClick}
+                    className="mt-12 px-12 py-4 sm:px-16 sm:py-5 text-lg sm:text-xl rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-600 to-sky-400 hover:scale-105 transition-all duration-300 touch-manipulation"
+                >
+                    Explore
+                </button>
             </div>
-
-            {/* ===== Animated Header (Hero-style) ===== */}
-            <h1
-                className="
-          text-6xl sm:text-8xl md:text-9xl
-          font-extrabold
-          tracking-tight
-          text-center
-          bg-gradient-to-r
-          from-fuchsia-400 via-violet-500 to-sky-400
-          bg-clip-text text-transparent
-          animate-[fadeInUp_1.2s_ease-out]
-        "
-            >
-                HackEuropa 2.0
-            </h1>
-
-            {/* ===== Explore Button (Scaled Proportionally) ===== */}
-            <button
-                onClick={handleClick}
-                className="
-          mt-12
-          touch-manipulation
-          px-10 py-4 sm:px-14 sm:py-5
-          text-lg sm:text-xl
-          rounded-full
-          bg-gradient-to-r
-          from-fuchsia-500 via-violet-600 to-sky-400
-          shadow-[0_0_40px_rgba(168,85,247,0.4)]
-          hover:scale-105
-          transition-all duration-300
-        "
-            >
-                Explore
-            </button>
         </div>
     );
 }
