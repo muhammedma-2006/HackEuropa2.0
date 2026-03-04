@@ -101,7 +101,7 @@ export default function Hero() {
                     transition={{ delay: 0.8 }}
                     className="text-lg md:text-xl font-medium text-white/60 max-w-2xl text-center mt-2 tracking-wide z-10"
                 >
-                    Join us on March 13 for an intense 8-hour innovation sprint.
+                    14 March 2026 • 9:00 AM
                 </motion.p>
 
                 <Countdown />

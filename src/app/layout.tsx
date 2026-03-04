@@ -10,12 +10,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Hack Europa 2.0 | March 13 | 8-Hour Hackathon",
-  description: "Join Hack Europa 2.0 on March 13 for an 8-hour high-intensity innovation sprint.",
+  title: "Hack Europa 2.0 | 14 March | 8-Hour Hackathon",
+  description: "Join Hack Europa 2.0 on 14 March for an 8-hour high-intensity innovation sprint.",
   metadataBase: new URL('https://hackeuropa.com'),
   openGraph: {
-    title: 'Hack Europa 2.0 | March 13 | 8-Hour Hackathon',
-    description: 'Join Hack Europa 2.0 on March 13 for an 8-hour high-intensity innovation sprint.',
+    title: 'Hack Europa 2.0 | 14 March | 8-Hour Hackathon',
+    description: 'Join Hack Europa 2.0 on 14 March for an 8-hour high-intensity innovation sprint.',
     url: 'https://hackeuropa.com',
     siteName: 'Hack Europa 2.0',
     locale: 'en_US',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hack Europa 2.0 | March 13 | 8-Hour Hackathon',
-    description: 'Join Hack Europa 2.0 on March 13 for an 8-hour high-intensity innovation sprint.',
+    title: 'Hack Europa 2.0 | 14 March | 8-Hour Hackathon',
+    description: 'Join Hack Europa 2.0 on 14 March for an 8-hour high-intensity innovation sprint.',
   },
 };
 

@@ -214,7 +214,7 @@ export default function Registration() {
                     <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">Hack Europa 2.0</h1>
                     <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-chrome uppercase">Team Registration</h2>
                     <p className="text-white/60 font-medium tracking-wide uppercase text-sm mb-6">
-                        Software Block <span className="mx-2 text-white/20">•</span> March 13 <span className="mx-2 text-white/20">•</span> 8 Hours
+                        Software Block <span className="mx-2 text-white/20">•</span> 14 March <span className="mx-2 text-white/20">•</span> 8 Hours
                     </p>
                     <div className="flex items-center justify-center gap-4 mt-4">
                         <span className="text-white/50 text-sm">4 Members Required</span>

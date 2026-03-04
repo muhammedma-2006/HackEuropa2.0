@@ -24,13 +24,13 @@ export default function About() {
                         Organized by the Students Association of Information Technology (SAIT) and hosted by the IT Department, Hack Europa 2.0 is an intense 8-hour innovation sprint where cutting-edge technology meets visionary ideas.
                     </p>
                     <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed mt-4">
-                        Taking place at the Software Block on March 13, this high-energy hackathon brings together developers, designers, and problem-solvers to build impactful solutions under pressure.
+                        Taking place at the Software Block on 14 March, this high-energy hackathon brings together developers, designers, and problem-solvers to build impactful solutions under pressure.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {[
-                        { icon: Calendar, title: "Date", value: "March 13", color: "text-[#4cc9f0]" },
+                        { icon: Calendar, title: "Date", value: "14 March", color: "text-[#4cc9f0]" },
                         { icon: MapPin, title: "Location", value: "Software Block", color: "text-[#f72585]" },
                         { icon: Trophy, title: "Format", value: "8 Hours", color: "text-[#7209b7]" }
                     ].map((item, index) => (
