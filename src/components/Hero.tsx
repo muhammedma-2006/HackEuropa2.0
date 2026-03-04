@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import Link from "next/link";
+import Countdown from "./Countdown";
 
 function MagneticButton({ children, href }: { children: React.ReactNode, href: string }) {
     const buttonRef = useRef<HTMLAnchorElement>(null);
@@ -102,6 +103,8 @@ export default function Hero() {
                 >
                     Join us on March 13 for an intense 8-hour innovation sprint.
                 </motion.p>
+
+                <Countdown />
 
                 <MagneticButton href="/register">
                     REGISTER NOW
