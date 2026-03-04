@@ -36,11 +36,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${spaceGrotesk.variable} antialiased bg-[#050505] text-white font-medium`}
+        className={`${spaceGrotesk.variable} antialiased text-white font-medium`}
       >
-        <CursorGlow />
-        <Navbar />
-        {children}
+        <div className="relative">
+          <div className="fixed inset-0 -z-10 backdrop-blur-[120px] opacity-70 pointer-events-none" />
+          <CursorGlow />
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );

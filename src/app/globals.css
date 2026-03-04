@@ -47,12 +47,26 @@ html {
 }
 
 body {
-  background: var(--background);
+  background-color: #050505;
+  background-image:
+    radial-gradient(circle at 50% 120%, rgba(124, 58, 237, 0.25), transparent 60%),
+    radial-gradient(circle at 20% 100%, rgba(217, 70, 239, 0.15), transparent 55%),
+    radial-gradient(circle at 80% 110%, rgba(56, 189, 248, 0.15), transparent 55%);
+  background-repeat: no-repeat;
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 40%, #050505 85%);
+  z-index: 50;
 }
 
 /* Background Noise overlay applied pseudo element on body or main container */

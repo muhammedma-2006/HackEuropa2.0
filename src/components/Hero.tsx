@@ -44,19 +44,7 @@ function MagneticButton({ children, href }: { children: React.ReactNode, href: s
 
 const BackgroundLighting = () => {
     return (
-        <>
-            {/* Bottom Uplight Core */}
-            <div className="absolute bottom-[-260px] left-1/2 -translate-x-1/2 w-[1100px] h-[600px] bg-fuchsia-500/20 sm:bg-fuchsia-500/35 blur-[220px] rounded-full" />
-
-            {/* Secondary Violet Spread */}
-            <div className="absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-violet-600/20 sm:bg-violet-600/30 blur-[200px] rounded-full" />
-
-            {/* Blue Accent Lift */}
-            <div className="absolute bottom-[-160px] left-1/2 -translate-x-1/2 w-[700px] h-[420px] bg-sky-400/20 sm:bg-sky-400/25 blur-[180px] rounded-full" />
-
-            {/* Dark Vignette Overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,#050505_85%)] pointer-events-none" />
-        </>
+        <div className="absolute bottom-[-300px] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-violet-600/15 blur-[250px] rounded-full pointer-events-none" />
     );
 };
 
@@ -68,7 +56,7 @@ export default function Hero() {
     const yText = useTransform(scrollY, [0, 1000], [0, 50]);
 
     return (
-        <section id="hero" ref={containerRef} className="relative w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden bg-black z-10">
+        <section id="hero" ref={containerRef} className="relative w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden z-10">
             {/* Background Lighting Layer */}
             <div className="absolute inset-0 -z-10">
                 <BackgroundLighting />
@@ -101,7 +89,7 @@ export default function Hero() {
                         2.0
                     </motion.div>
 
-                    <h1 className="text-hero-clamp font-black tracking-tighter text-sweep z-10 text-center leading-[0.9]">
+                    <h1 className="text-hero-clamp font-black tracking-tighter text-sweep z-10 text-center leading-[0.9] text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">
                         HACK<br className="md:hidden" /> EUROPA
                     </h1>
                 </div>
