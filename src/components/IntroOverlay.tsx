@@ -57,12 +57,10 @@ export default function IntroOverlay({ onEnter }: { onEnter: () => void }) {
                 opacity: animate ? 0 : 1,
             }}
         >
-            <div className="relative flex items-center justify-center h-screen overflow-hidden text-center bg-[#0a0a0a] w-full">
+            <div className="relative flex items-center justify-center h-screen overflow-hidden text-center w-full bg-[#0a0a0a] bg-[url('/images/poster_bg.png')] bg-cover bg-center bg-no-repeat">
 
-                {/* Soft Ambient Light */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-[200px]" />
-                </div>
+                {/* Dark Overlay for Text Readability */}
+                <div className="absolute inset-0 pointer-events-none bg-black/30" />
 
                 {/* Dim Background 2.0 */}
                 <div
