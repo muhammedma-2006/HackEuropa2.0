@@ -1,9 +1,7 @@
 import Hero from "@/components/Hero";
 import EventInfo from "@/components/EventInfo";
 import About from "@/components/About";
-import Tracks from "@/components/Tracks";
 import WhyParticipate from "@/components/WhyParticipate";
-import Speakers from "@/components/Speakers";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -19,8 +17,6 @@ export default function Home() {
         <EventInfo />
         <About />
         <WhyParticipate />
-        <Tracks />
-        <Speakers />
         <Footer />
       </div>
     </main>
