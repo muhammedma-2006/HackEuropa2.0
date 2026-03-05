@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import Link from "next/link";
 import Countdown from "./Countdown";
 
 function MagneticButton({ children, href }: { children: React.ReactNode, href: string }) {
@@ -27,18 +26,19 @@ function MagneticButton({ children, href }: { children: React.ReactNode, href: s
             animate={{ x: position.x, y: position.y }}
             transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
         >
-            <Link href={href} passHref>
-                <motion.a
-                    ref={buttonRef}
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-block mt-8 px-10 py-4 rounded-full font-bold text-lg tracking-wider text-black bg-chrome border border-white/40 shadow-[0_0_20px_rgba(247,37,133,0.3)] hover:shadow-[0_0_40px_rgba(247,37,133,0.6)] transition-shadow duration-300 z-10 cursor-pointer"
-                >
-                    {children}
-                </motion.a>
-            </Link>
+            <motion.a
+                ref={buttonRef}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block mt-8 px-10 py-4 rounded-full font-bold text-lg tracking-wider text-black bg-chrome border border-white/40 shadow-[0_0_20px_rgba(247,37,133,0.3)] hover:shadow-[0_0_40px_rgba(247,37,133,0.6)] transition-shadow duration-300 z-10 cursor-pointer"
+            >
+                {children}
+            </motion.a>
         </motion.div>
     );
 }
@@ -106,7 +106,7 @@ export default function Hero() {
 
                 <Countdown />
 
-                <MagneticButton href="/register">
+                <MagneticButton href="YOUR_GOOGLE_FORM_LINK">
                     REGISTER NOW
                 </MagneticButton>
             </motion.div>

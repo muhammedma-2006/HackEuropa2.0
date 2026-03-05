@@ -11,7 +11,7 @@ export default function Navbar() {
         { name: "Home", href: "/#hero" },
         { name: "About", href: "/#about" },
         { name: "Tracks", href: "/#tracks" },
-        { name: "Register", href: "/register" },
+        { name: "Register", href: "YOUR_GOOGLE_FORM_LINK", external: true },
     ];
 
     return (
@@ -25,16 +25,33 @@ export default function Navbar() {
                 {links.map((link) => {
                     const isActive = pathname === link.href;
                     const isRegister = link.name === "Register";
+
+                    const commonClasses = `text-sm tracking-wider uppercase transition-colors duration-300 font-medium ${isRegister
+                        ? "text-[#f72585] font-semibold hover:text-[#f72585] drop-shadow-[0_0_8px_rgba(247,37,133,0.5)]"
+                        : isActive
+                            ? "text-white"
+                            : "text-white/50 hover:text-white"
+                        }`;
+
+                    if (link.external) {
+                        return (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={commonClasses}
+                            >
+                                {link.name}
+                            </a>
+                        );
+                    }
+
                     return (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`text-sm tracking-wider uppercase transition-colors duration-300 font-medium ${isRegister
-                                ? "text-[#f72585] font-semibold hover:text-[#f72585] drop-shadow-[0_0_8px_rgba(247,37,133,0.5)]"
-                                : isActive
-                                    ? "text-white"
-                                    : "text-white/50 hover:text-white"
-                                }`}
+                            className={commonClasses}
                         >
                             {link.name}
                         </Link>
