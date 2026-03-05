@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import EventInfo from "@/components/EventInfo";
 import About from "@/components/About";
 import Tracks from "@/components/Tracks";
 import WhyParticipate from "@/components/WhyParticipate";
@@ -15,6 +16,7 @@ export default function Home() {
 
       {/* Pages that scroll over the hero */}
       <div className="relative z-10 mt-[100vh] bg-[#050505] shadow-[0_-20px_50px_rgba(0,0,0,0.8)] border-t border-white/10 flex flex-col">
+        <EventInfo />
         <About />
         <WhyParticipate />
         <Tracks />
