@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import EventInfo from "@/components/EventInfo";
 import About from "@/components/About";
 import Guidelines from "@/components/Guidelines";
+import Timeline from "@/components/Timeline";
 import PrizePool from "@/components/PrizePool";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
         <EventInfo />
         <About />
         <Guidelines />
+        <Timeline />
         <PrizePool />
         <Footer />
       </div>
