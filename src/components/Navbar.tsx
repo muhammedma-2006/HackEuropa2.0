@@ -10,6 +10,7 @@ export default function Navbar() {
     const links = [
         { name: "Home", href: "/#hero" },
         { name: "About", href: "/#about" },
+        { name: "Guidelines", href: "/#guidelines" },
         { name: "Register", href: "YOUR_GOOGLE_FORM_LINK", external: true },
     ];
 

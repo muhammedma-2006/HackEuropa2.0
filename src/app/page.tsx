@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import EventInfo from "@/components/EventInfo";
 import About from "@/components/About";
-import WhyParticipate from "@/components/WhyParticipate";
+import Guidelines from "@/components/Guidelines";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <div className="relative z-10 mt-[100vh] bg-[#050505] shadow-[0_-20px_50px_rgba(0,0,0,0.8)] border-t border-white/10 flex flex-col">
         <EventInfo />
         <About />
-        <WhyParticipate />
+        <Guidelines />
         <Footer />
       </div>
     </main>
